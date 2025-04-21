@@ -1,5 +1,6 @@
 import React from "react";
 import { ExternalLink, Github } from "lucide-react";
+import image from "../../assets/Image.webp";
 
 interface Project {
   id: number;
@@ -18,7 +19,8 @@ const Projects = () => {
       title: "Codecrux - AI-Powered CS Interview Prep SaaS",
       description:
         "An AI-driven coding interview prep platform utilizing OpenAI and LangChain.js for personalized learning.",
-      image: "https://source.unsplash.com/featured/?technology,ai",
+      image:
+        "https://unsplash.com/photos/monitor-showing-java-programming-OqtafYT5kTw",
       tags: ["Next.js", "OpenAI", "LangChain.js", "Tailwind CSS"],
       githubUrl: "https://github.com/Inshamhaque/codecrux",
       liveUrl: "https://codecrux.com",
@@ -38,7 +40,7 @@ const Projects = () => {
       title: "Web3 Click-to-Earn SaaS",
       description:
         "A decentralized platform where YouTubers post thumbnails, and users earn cryptocurrency for clicking on them.",
-      image: "https://source.unsplash.com/featured/?blockchain,crypto",
+      image: image,
       tags: ["Solidity", "Next.js", "Web3.js", "Ethereum"],
       githubUrl: "https://github.com/Inshamhaque/web3-click-to-earn",
       liveUrl: "https://web3-click.com",
@@ -50,6 +52,16 @@ const Projects = () => {
         "A full-stack blogging platform with a powerful text editor and NLP-based topic tagging.",
       image: "https://source.unsplash.com/featured/?blog,writing",
       tags: ["React", "Node.js", "PostgreSQL", "Tailwind CSS"],
+      githubUrl: "https://github.com/Inshamhaque/bloggify",
+      liveUrl: "https://bloggify.com",
+    },
+    {
+      id: 5,
+      title: "Financeer - Finance Dashboard",
+      description:
+        "An intuitive finance dashboard with customizable layouts and revenue prediction",
+      image: "https://source.unsplash.com/featured/?blog,writing",
+      tags: ["React", "Recharts", "Tailwind CSS"],
       githubUrl: "https://github.com/Inshamhaque/bloggify",
       liveUrl: "https://bloggify.com",
     },
