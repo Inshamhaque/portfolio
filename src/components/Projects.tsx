@@ -32,7 +32,7 @@ const Projects = () => {
         "A decentralized platform where YouTubers post thumbnails, and users earn cryptocurrency for clicking on them.",
       image: image,
       tags: ["Solidity", "Next.js", "Web3.js", "Ethereum"],
-      githubUrl: "https://github.com/Inshamhaque/web3-click-to-earn",
+      githubUrl: "https://github.com/Inshamhaque/taskforge",
       liveUrl: "https://web3-click.com",
     },
     {
@@ -52,7 +52,7 @@ const Projects = () => {
         "An intuitive finance dashboard with customizable layouts and revenue prediction.",
       image: "https://source.unsplash.com/featured/?finance,dashboard",
       tags: ["React", "Recharts", "Tailwind CSS"],
-      githubUrl: "https://github.com/Inshamhaque/financeer",
+      githubUrl: "https://github.com/Dhruv-ZHCET/Finance_app",
       liveUrl: "https://financeer.com",
     },
   ];

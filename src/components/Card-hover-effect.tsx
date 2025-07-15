@@ -75,7 +75,7 @@ export const HoverEffect = ({
                 <Github size={16} />
                 Code
               </a>
-              <a
+              {/* <a
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -83,7 +83,7 @@ export const HoverEffect = ({
               >
                 <ExternalLink size={16} />
                 Live
-              </a>
+              </a> */}
             </div>
           </Card>
         </a>
