@@ -1,11 +1,66 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Github, Linkedin, Twitter } from "lucide-react";
 
+const TypewriterEffect = ({ sentences }:any) => {
+  const [currentSentenceIndex, setCurrentSentenceIndex] = useState(0);
+  const [currentText, setCurrentText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    const currentSentence = sentences[currentSentenceIndex];
+    
+    const timeout = setTimeout(() => {
+      if (isPaused) {
+        setIsPaused(false);
+        setIsDeleting(true);
+        return;
+      }
+
+      if (isDeleting) {
+        setCurrentText(currentSentence.substring(0, currentText.length - 1));
+        
+        if (currentText.length === 0) {
+          setIsDeleting(false);
+          setCurrentSentenceIndex((prev) => (prev + 1) % sentences.length);
+        }
+      } else {
+        setCurrentText(currentSentence.substring(0, currentText.length + 1));
+        
+        if (currentText.length === currentSentence.length) {
+          setIsPaused(true);
+        }
+      }
+    }, isDeleting ? 50 : isPaused ? 2000 : Math.random() * 50 + 30);
+
+    return () => clearTimeout(timeout);
+  }, [currentText, isDeleting, isPaused, currentSentenceIndex, sentences]);
+
+  return (
+    <div className="h-16 flex items-center justify-center mb-6">
+      <p className="text-md md:text-xl font-mono text-gray-700 dark:text-gray-300">
+        {currentText}
+        <span className="animate-pulse">|</span>
+      </p>
+    </div>
+  );
+};
+
 const Hero = () => {
+  const sentences = [
+    "I build & ship ideas faster than your API can 200 🚀",
+    "Building cool sh*t at wasp speed 🐝⚡",
+    "I ship side projects like it's a CI/CD pipeline",
+    "I turn caffeine and code into full-stack magic ☕✨",
+    "Ideas to production, before your merge conflict resolves.",
+    "Crafting fast, clean, and slightly dangerous UIs 😎",
+    "From bug to beta in record time 🧪➡️🚀"
+  ];
+
   return (
     <section id="home" className="pt-32 pb-20 md:pt-40 md:pb-28 ">
-      <div className="max-w-5xl mx-auto text-center">
-        <p className="text-indigo-600 dark:text-indigo-400 font-medium mb-2">
+      <div className=" max-w-5xl mx-auto text-center">
+        <p className=" text-indigo-600 dark:text-indigo-400 font-medium mb-2">
           Hello, I'm
         </p>
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4">
@@ -20,7 +75,10 @@ const Hero = () => {
           <b>MERN, Next.js, AI, and Web3</b>. Constantly exploring new
           technologies to push boundaries in software development.
         </p>
-
+        
+        {/* Typewriter Effect */}
+        <TypewriterEffect sentences={sentences} />
+        
         {/* Highlighted Tech Stack */}
         <div className="flex flex-wrap justify-center gap-3 mb-8">
           {[
@@ -41,7 +99,6 @@ const Hero = () => {
             </span>
           ))}
         </div>
-
         <div className="flex flex-wrap justify-center gap-4 mb-8">
           <a
             href="#contact"
@@ -56,33 +113,7 @@ const Hero = () => {
             View Work
           </a>
         </div>
-
-        <div className="flex justify-center space-x-5">
-          <a
-            href="https://github.com/Inshamhaque"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300"
-          >
-            <Github size={24} />
-          </a>
-          <a
-            href="https://linkedin.com/in/inshamul-haque"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300"
-          >
-            <Linkedin size={24} />
-          </a>
-          <a
-            href="https://twitter.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300"
-          >
-            <Twitter size={24} />
-          </a>
-        </div>
+        
       </div>
     </section>
   );

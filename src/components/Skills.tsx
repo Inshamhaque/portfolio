@@ -2,94 +2,75 @@ import React from "react";
 
 const Skills = () => {
   const frontendSkills = [
-    { name: "HTML/CSS", level: 90 },
-    { name: "JavaScript", level: 90 },
-    { name: "React", level: 85 },
-    { name: "Next.js", level: 80 },
-    { name: "TypeScript", level: 80 },
-    { name: "Tailwind CSS", level: 85 },
+    "HTML/CSS",
+    "JavaScript",
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Tailwind CSS",
   ];
 
   const backendSkills = [
-    { name: "Node.js", level: 85 },
-    { name: "Express", level: 80 },
-    { name: "MongoDB", level: 80 },
-    { name: "PostgreSQL", level: 75 },
-    { name: "Redis", level: 60 },
+    "Node.js",
+    "Express",
+    "MongoDB",
+    "PostgreSQL",
+    "Redis",
   ];
 
-  const devOpsSkills = [
-    { name: "Docker", level: 60 },
-    { name: "Linux", level: 85 },
-    { name: "AWS", level: 65 },
-    { name: "CI/CD", level: 60 },
-  ];
+  const devOpsSkills = ["Docker", "Linux", "AWS", "CI/CD"];
 
-  const SkillBar = ({ name, level }: { name: string; level: number }) => (
-    <div className="mb-6">
-      <div className="flex justify-between mb-1">
-        <span className="text-gray-700 dark:text-gray-300 font-medium">
-          {name}
-        </span>
-        <span className="text-gray-600 dark:text-gray-400">{level}%</span>
-      </div>
-      <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
-        <div
-          className="bg-indigo-600 dark:bg-indigo-400 h-2.5 rounded-full"
-          style={{ width: `${level}%` }}
-        ></div>
-      </div>
-    </div>
+  const SkillBadge = ({ name }: { name: string }) => (
+    <span className="inline-block bg-indigo-100 dark:bg-indigo-500 text-indigo-800 dark:text-white text-sm font-medium px-3 py-1 rounded-full shadow-sm hover:scale-105 transition-transform">
+      {name}
+    </span>
   );
 
   return (
-    <section id="skills" className="py-20 ">
+    <section id="skills" className="py-20">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-            My Skills
+            Skills
           </h2>
           <div className="w-20 h-1 bg-indigo-600 dark:bg-indigo-400 mx-auto"></div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 px-4 sm:px-0">
+          {/* Frontend */}
           <div>
-            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6">
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
               Frontend Development
             </h3>
-            {frontendSkills.map((skill) => (
-              <SkillBar
-                key={skill.name}
-                name={skill.name}
-                level={skill.level}
-              />
-            ))}
+            <div className="flex flex-wrap gap-3">
+              {frontendSkills.map((skill) => (
+                <SkillBadge key={skill} name={skill} />
+              ))}
+            </div>
           </div>
 
+          {/* Backend */}
           <div>
-            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6">
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
               Backend Development
             </h3>
-            {backendSkills.map((skill) => (
-              <SkillBar
-                key={skill.name}
-                name={skill.name}
-                level={skill.level}
-              />
-            ))}
+            <div className="flex flex-wrap gap-3">
+              {backendSkills.map((skill) => (
+                <SkillBadge key={skill} name={skill} />
+              ))}
+            </div>
           </div>
 
+          {/* DevOps */}
           <div className="md:col-span-2">
-            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6">
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
               DevOps & Cloud
             </h3>
-            {devOpsSkills.map((skill) => (
-              <SkillBar
-                key={skill.name}
-                name={skill.name}
-                level={skill.level}
-              />
-            ))}
+            <div className="flex flex-wrap gap-3">
+              {devOpsSkills.map((skill) => (
+                <SkillBadge key={skill} name={skill} />
+              ))}
+            </div>
           </div>
         </div>
       </div>

@@ -4,6 +4,9 @@ export default {
   darkMode: "class",
   theme: {
     extend: {
+      fontFamily: {
+        'sans': ['Inter', 'ui-sans-serif', 'system-ui'],
+      },
       colors: {
         primary: {
           DEFAULT: "#4f46e5", // indigo-600
