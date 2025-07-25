@@ -32,7 +32,6 @@ export const HoverEffect = ({
     >
       {projects.map((project, idx) => (
         <a
-          href={project.liveUrl}
           key={project.id}
           className="relative group block p-2 h-full w-full"
           onMouseEnter={() => setHoveredIndex(idx)}

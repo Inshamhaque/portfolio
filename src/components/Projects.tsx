@@ -6,17 +6,37 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "Codecrux - AI-Powered CS Interview Prep SaaS",
+      title: "VisuoAI",
       description:
-        "An AI-driven coding interview prep platform utilizing OpenAI and LangChain.js for personalized learning.",
+        "An AI-driven animation generation and editing platform using Manim and Remotion",
       image:
         "https://unsplash.com/photos/monitor-showing-java-programming-OqtafYT5kTw",
-      tags: ["Next.js", "OpenAI", "LangChain.js", "Tailwind CSS"],
-      githubUrl: "https://github.com/Inshamhaque/codecrux",
-      liveUrl: "https://codecrux.com",
+      tags: ["Next.js", "OpenAI", "Remotion", "Manim",""],
+      githubUrl: "https://github.com/Inshamhaque/visuoai",
+      liveUrl: "#",
     },
     {
       id: 2,
+      title: "Bloggify - Blogging Platform",
+      description:
+        "A full-stack Developer Blogging portfolio platform",
+      image: "https://source.unsplash.com/featured/?blog,writing",
+      tags: ["React", "Node.js", "MongoDB", "Tailwind CSS","Github oAuth"],
+      githubUrl: "https://github.com/Inshamhaque/bloggify",
+      liveUrl: "https://bloggify-azure.vercel.app",
+    },
+    {
+      id: 3,
+      title: "Taskforge",
+      description:
+        "A decentralized platform where YouTubers post thumbnails, and users earn cryptocurrency for clicking on them.",
+      image: image,
+      tags: [ "Next.js", "Web3.js", "Solana Wallet Adapters","Tailwind CSS"],
+      githubUrl: "https://github.com/Inshamhaque/taskforge",
+      liveUrl: "https://web3-click.com",
+    },
+    {
+      id: 4,
       title: "Uber Clone",
       description:
         "A ride-hailing platform implementing real-time ride-matching, driver assignment, and payment processing.",
@@ -24,26 +44,6 @@ const Projects = () => {
       tags: ["React", "Node.js", "MongoDB", "Redis", "WebSockets"],
       githubUrl: "https://github.com/Inshamhaque/uber-clone",
       liveUrl: "https://uber-clone.com",
-    },
-    {
-      id: 3,
-      title: "Web3 Click-to-Earn SaaS",
-      description:
-        "A decentralized platform where YouTubers post thumbnails, and users earn cryptocurrency for clicking on them.",
-      image: image,
-      tags: ["Solidity", "Next.js", "Web3.js", "Ethereum"],
-      githubUrl: "https://github.com/Inshamhaque/taskforge",
-      liveUrl: "https://web3-click.com",
-    },
-    {
-      id: 4,
-      title: "Bloggify - Blogging Platform",
-      description:
-        "A full-stack blogging platform with a powerful text editor and NLP-based topic tagging.",
-      image: "https://source.unsplash.com/featured/?blog,writing",
-      tags: ["React", "Node.js", "PostgreSQL", "Tailwind CSS"],
-      githubUrl: "https://github.com/Inshamhaque/bloggify",
-      liveUrl: "https://bloggify.com",
     },
     {
       id: 5,
